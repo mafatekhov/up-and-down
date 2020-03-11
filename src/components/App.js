@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PlayersList from "./PlayersList";
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
+    constructor(props) {
+        super(props);
+        const initialState = {
             players: [
                 {
                     id: 1,
@@ -28,8 +28,21 @@ class App extends Component {
                 },
             ]
         };
+        this.state = initialState;
 
     }
+
+    addPlayer = () => {
+        const newPlayer = {
+            id: 5,
+            name: 'Nikita',
+            score: 0
+        };
+        this.setState(state => (
+            {
+                players: [...state.players, newPlayer]
+            }));
+    };
 
 
     render() {
@@ -39,6 +52,9 @@ class App extends Component {
                 <div className="row">
                     <PlayersList title={title} players={this.state.players}/>
                 </div>
+                <button onClick={this.addPlayer}>
+                    Add
+                </button>
             </div>
         );
     }
