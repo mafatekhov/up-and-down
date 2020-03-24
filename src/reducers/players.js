@@ -30,7 +30,7 @@ export default function players(state = initialState, action) {
                 ...state,
                 {
                     id: state.reduce((maxId, player) => Math.max(player.id, maxId), -1) + 1,
-                    name: action.payload.name,
+                    name: action.name,
                     score: 0
                 }
             ]
