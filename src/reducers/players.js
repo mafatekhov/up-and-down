@@ -1,4 +1,4 @@
-import {ADD_PLAYER} from "../constants/ActionTypes";
+import {ADD_PLAYER, DELETE_PLAYER} from "../constants/ActionTypes";
 
 const initialState = [
     {
@@ -33,7 +33,16 @@ export default function players(state = initialState, action) {
                     name: action.name,
                     score: 0
                 }
-            ]
+            ];
+        case DELETE_PLAYER:
+            const player = state.find((element) => element.id === action.id);
+            if (!player) {
+                return state;
+            }
+            const playerIndex = state.indexOf(player);
+            const newState = [...state];
+            newState.splice(playerIndex, 1);
+            return newState;
         default:
             return state
     }

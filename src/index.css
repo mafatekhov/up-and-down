@@ -6,7 +6,7 @@
 
 
 .players-list {
-    width: 200px;
+    width: 160px;
 }
 
 .add-player-form {
@@ -23,4 +23,15 @@
     line-height: 30px;
     height: 35px;
     width: 70px;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.player-name {
+    width: 150px;
 }
