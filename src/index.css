@@ -1,0 +1,26 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+
+.players-list {
+    width: 200px;
+}
+
+.add-player-form {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    align-items: center;
+}
+
+.add-player-input {
+}
+.add-player-btn {
+    margin-left: 10px;
+    line-height: 30px;
+    height: 35px;
+    width: 70px;
+}

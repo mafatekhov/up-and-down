@@ -1,16 +1,17 @@
 import React from 'react';
 import Player from './Player'
 import AddPlayer from "../containers/AddPlayer";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function PlayersList(props) {
     const {title, players} = props;
     return (
-        <div className="players-list">
-            <h1>{title}</h1>
-            <ul>
-                {players.map(player => <Player key={player.id} data={player}/>)}
-            </ul>
+        <div>
             <AddPlayer/>
+            <h1>{title}</h1>
+            <ListGroup className="players-list">
+                {players.map(player => <Player key={player.id} data={player}/>)}
+            </ListGroup>
         </div>
     );
 }

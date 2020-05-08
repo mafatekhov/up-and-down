@@ -1,11 +1,12 @@
 import React from 'react';
+import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 function Player(props) {
     const {data} = props;
     return (
-        <li>
+        <ListGroupItem variant="info">
             {data.name}
-        </li>
+        </ListGroupItem>
     );
 }
 
